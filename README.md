@@ -2,4 +2,6 @@
 
 A bioluminescent ocean where bodies evolve: jellyfish, eels and radial creatures with real swimming physics, tiny learning brains and natural selection.
 
-Play: https://aiautomationvic.github.io/deep-evolving-bodies/
+Play (aquarium): https://aiautomationvic.github.io/deep-evolving-bodies/
+
+Play (open-ended evolution): https://aiautomationvic.github.io/deep-evolving-bodies/life/

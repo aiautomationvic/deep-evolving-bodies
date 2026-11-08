@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life: Open-Ended Evolution</title>
+<style>
+:root{--a:#52d6c0;--ln:#1a2b46;--tx:#d3e3f5;--dim:#7690b0}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#01040a;color:var(--tx);font:13px system-ui,sans-serif;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:none}
+#hud{position:absolute;top:10px;left:12px;color:var(--dim);display:flex;gap:14px;flex-wrap:wrap;pointer-events:none}#hud b{color:var(--tx)}
+#bar{position:absolute;top:34px;left:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap;pointer-events:none}
+.g{display:flex;gap:2px;background:#050c18d8;border:1px solid var(--ln);border-radius:10px;padding:3px;pointer-events:auto}
+button{background:transparent;color:var(--tx);border:0;border-radius:7px;padding:6px 10px;font:inherit;cursor:pointer}button:hover{background:#12213a}button.on{background:#0d3a35;box-shadow:inset 0 0 0 1px var(--a)}
+#side{position:absolute;right:12px;top:80px;width:260px;max-height:calc(100% - 130px);overflow:auto;background:#08101bd9;border:1px solid var(--ln);border-radius:10px;padding:10px}
+h2{font-size:10.5px;margin:8px 0 4px;color:var(--dim);text-transform:uppercase;letter-spacing:.14em}h2:first-child{margin-top:0}
+.chip{display:block;padding:2px 0;cursor:pointer}.chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+#feed{position:absolute;left:12px;bottom:12px;max-width:380px;font-size:12px;pointer-events:none}#feed div{background:#040a14c0;border-left:2px solid var(--a);padding:3px 8px;margin-top:3px}
+#intro{position:fixed;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;background:radial-gradient(#0a2a3acc,#01040af2);text-align:center}
+#intro .b{max-width:440px;padding:20px}#intro h1{letter-spacing:.3em;font-size:28px;margin:0 0 8px;text-shadow:0 0 24px var(--a)}#intro p{color:var(--dim)}
+#intro button{background:#0f6a5e;border:1px solid var(--a);padding:10px 22px;margin:6px;font-size:14px}
+#prog{position:absolute;left:0;top:0;height:3px;background:var(--a);width:0}
+@media(max-width:700px){#side{display:none}}
+</style></head><body>
+<canvas id="v"></canvas><div id="prog"></div><div id="hud"></div>
+<div id="bar"><div class="g" id="spd"><button data-s="1" class="on">x1</button><button data-s="4">x4</button><button data-s="16">x16</button></div>
+<div class="g"><button id="pause">Pause</button><button id="ff1">Skip +10k</button><button id="ff2">Skip +40k</button></div>
+<div class="g"><button data-e="bloom">Bloom</button><button data-e="famine">Famine</button><button data-e="hunters">Hunters</button><button data-e="storm">Mutation storm</button><button data-e="meteor">Meteor</button></div>
+<div class="g"><button id="new">New world</button></div></div>
+<div id="side"><h2>Selected</h2><div id="sel">Click a creature</div><h2>Forms alive</h2><div id="forms"></div><h2>Species</h2><div id="sp"></div></div>
+<div id="feed"></div>
+<div id="intro"><div class="b"><h1>LIFE</h1><p>Everything starts as simple cells. Bodies, limbs, fins, tentacles and brains grow from genes and change by mutation and selection. Nothing is pre-designed; labels like Worm or Bell are applied afterwards.</p>
+<button id="s1">Watch from the start</button><button id="s2">Fast-forward first (30k ticks)</button><p>Wheel: zoom. Drag: pan. Click a creature to inspect it. Space: pause.</p></div></div>
+<script src="engine.js"></script><script src="game.js"></script></body></html>
